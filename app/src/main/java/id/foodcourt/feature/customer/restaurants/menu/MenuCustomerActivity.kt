@@ -52,7 +52,8 @@ class MenuCustomerActivity : AppCompatActivity() {
 
         val resultTv = findViewById<TextView>(R.id.tv_menu)
 
-        resultTv.text="Restaurant  = "+nama+"\n UID ="+uid
+        resultTv.text=nama
+//        +"\n UID ="+uid "Restaurant  = "+
 
         btn_detail.setOnClickListener {
             val orderList = arrayListOf(itemOrder)
