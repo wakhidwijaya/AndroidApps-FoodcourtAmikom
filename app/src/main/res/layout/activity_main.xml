@@ -21,9 +21,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="30dp"
-        android:orientation="vertical">
+        android:layout_height="410dp"
+        android:orientation="vertical"
+        android:padding="30dp">
 
         <TextView
             android:id="@+id/tv_activity_login_text"
@@ -36,23 +36,23 @@
             android:textColor="@color/colorPrimaryText"
             android:textSize="@dimen/textsize_twenty"
             app:layout_constraintBottom_toTopOf="@id/et_email"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/et_email"
-            android:inputType="textEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/shapeemail"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/quicksand_regular"
             android:gravity="left"
             android:hint="@string/hint_email"
+            android:inputType="textEmailAddress"
             android:padding="10dp"
-            android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:drawablePadding="10dp"
             android:paddingLeft="@dimen/vertical_margin_eight"
-            android:paddingTop="@dimen/horizontal_margin_four"/>
+            android:paddingTop="@dimen/horizontal_margin_four" />
 
         <EditText
             android:id="@+id/et_password"
@@ -61,23 +61,33 @@
             android:layout_marginTop="40dp"
             android:background="@drawable/shapeemail"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
-            android:fontFamily="@font/quicksand_regular"
-            android:padding="10dp"
-            android:gravity="left"
             android:drawablePadding="10dp"
+            android:fontFamily="@font/quicksand_regular"
+            android:gravity="left"
+            android:hint="@string/hint_password"
             android:inputType="textPassword"
-            android:hint="@string/hint_password"/>
+            android:padding="10dp" />
 
         <Button
             android:id="@+id/btn_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:padding="15dp"
             android:background="@drawable/shapebutton"
-            android:textColor="#e2f1f8"
             android:drawableLeft="@drawable/ic_lock_open_black_24dp"
-            android:text="@string/text_btn_login" />
+            android:padding="15dp"
+            android:text="@string/text_btn_login"
+            android:textColor="#e2f1f8" />
+
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Develop by Team 13"
+        android:fontFamily="@font/quicksand_italic"
+        android:textSize="15dp"
+        android:layout_marginLeft="110dp">
+    </TextView>
 
 </LinearLayout>

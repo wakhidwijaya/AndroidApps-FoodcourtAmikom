@@ -5,4 +5,6 @@
     <string name="text_btn_login">LOGIN</string>
     <string name="foodcourt_amikom">Foodcourt Amikom</string>
     <string name="login">LOGIN</string>
+    <string name="scan_table">Scan Table</string>
+    <string name="menu">menu</string>
 </resources>
