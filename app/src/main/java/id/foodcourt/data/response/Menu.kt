@@ -1,4 +1,4 @@
-package id.foodcourt.data
+package id.foodcourt.data.response
 
 data class Menu (
     val name : String ="",
