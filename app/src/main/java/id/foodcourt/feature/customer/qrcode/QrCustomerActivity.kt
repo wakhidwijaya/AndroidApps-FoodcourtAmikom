@@ -52,7 +52,7 @@ class   QrCustomerActivity : AppCompatActivity(),  ZXingScannerView.ResultHandle
             val tableNum = rawResult.text.toString().takeLast(2)
             val editor = sharedPreferences.edit()
             editor.putInt(TABLE, tableNum.toInt())
-            editor.apply()
+            editor.commit()
             val intent = Intent(this, RestaurantListActivity::class.java)
             startActivity(intent)
 

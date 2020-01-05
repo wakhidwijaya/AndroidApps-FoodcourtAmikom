@@ -46,7 +46,6 @@ class MainActivity : AppCompatActivity() {
             }
 
             signIn(it, et_email.text.toString(), et_password.text.toString())
-            finish()
 
         }
     }
