@@ -66,11 +66,7 @@ class MenuCustomerActivity : AppCompatActivity() {
     private inner class MenuAdpater internal constructor(options: FirestoreRecyclerOptions<Menu>) : FirestoreRecyclerAdapter<Menu, MenuViewHolder>(options) {
         override fun onBindViewHolder(menuViewHolder: MenuViewHolder, position: Int, menu: Menu) {
             menuViewHolder.setMenu(menu)
-
             menuViewHolder.initListener()
-
-            var user = FirebaseAuth.getInstance().currentUser
-
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {

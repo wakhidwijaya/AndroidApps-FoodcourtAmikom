@@ -30,22 +30,22 @@ class MainActivity : AppCompatActivity() {
 
 
         btn_login.setOnClickListener {
-//            val intent = Intent(this, RestaurantListActivity::class.java)
-//            startActivity(intent)
-            val email = et_email.text.toString()
-            val password = et_password.text.toString()
-
-            if (email.isBlank()){
-                Toast.makeText(applicationContext, "Email Required ", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            if (password.isBlank()){
-                Toast.makeText(applicationContext, "Password Required ", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-
-            signIn(it, et_email.text.toString(), et_password.text.toString())
+            val intent = Intent(this, RestaurantListActivity::class.java)
+            startActivity(intent)
+//            val email = et_email.text.toString()
+//            val password = et_password.text.toString()
+//
+//            if (email.isBlank()){
+//                Toast.makeText(applicationContext, "Email Required ", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//
+//            if (password.isBlank()){
+//                Toast.makeText(applicationContext, "Password Required ", Toast.LENGTH_SHORT).show()
+//                return@setOnClickListener
+//            }
+//
+//            signIn(it, et_email.text.toString(), et_password.text.toString())
 
         }
     }
