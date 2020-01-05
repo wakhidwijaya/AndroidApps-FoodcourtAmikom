@@ -55,14 +55,14 @@ class MenuCustomerActivity : AppCompatActivity() {
         resultTv.text="Restaurant  = "+nama+"\n UID ="+uid
 
         btn_detail.setOnClickListener {
-            val orderList = arrayListOf(itemOrder)
-            val intent = Intent(this@MenuCustomerActivity, OrderCustomerActivity::class.java)
-            intent.putParcelableArrayListExtra("ORDERLIST", ArrayList<Parcelable>(itemOrder))
-            intent.putExtra("RestaurantName", nama)
-            intent.putExtra("RestaurantUid", uid)
-            startActivity(intent)
-
-
+            if (itemOrder.isNotEmpty()) {
+                val orderList = arrayListOf(itemOrder)
+                val intent = Intent(this@MenuCustomerActivity, OrderCustomerActivity::class.java)
+                intent.putParcelableArrayListExtra("ORDERLIST", ArrayList<Parcelable>(itemOrder))
+                intent.putExtra("RestaurantName", nama)
+                intent.putExtra("RestaurantUid", uid)
+                startActivity(intent)
+            }
         }
     }
     private inner class MenuAdpater internal constructor(options: FirestoreRecyclerOptions<Menu>) : FirestoreRecyclerAdapter<Menu, MenuViewHolder>(options) {

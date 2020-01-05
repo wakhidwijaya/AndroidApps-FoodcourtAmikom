@@ -1,5 +1,6 @@
 package id.foodcourt.feature.customer.payment
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -15,6 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
 import id.foodcourt.data.request.OrderMenu
+import id.foodcourt.feature.customer.dashboard.DashboardCustomerActivity
 import id.foodcourt.utils.Config.TABLE
 import kotlinx.android.synthetic.main.activity_order_customer.*
 
@@ -38,9 +40,8 @@ class OrderCustomerActivity : AppCompatActivity() {
         val email = db!!.email
         val name = db!!.displayName
         val uid = db!!.uid
-        val table = TABLE
+        val table = getSharedPreferences(TABLE, 0)
 
-        var i : Int
         var menus : MutableList<HashMap<String, Any?>> = mutableListOf()
 
         for (i in list){
@@ -59,7 +60,7 @@ class OrderCustomerActivity : AppCompatActivity() {
                 "email" to email,
                 "name" to name,
                 "status" to 0,
-                "table" to 13,
+                "table" to table.toString(),
                 "uid" to uid
             )
 
@@ -72,7 +73,11 @@ class OrderCustomerActivity : AppCompatActivity() {
                                 .collection("orders")
                                 .document(i.toString())
                                 .set(it)
-                                .addOnSuccessListener { Log.d("Dokumen", "Menu berhasil document")  }
+                                .addOnSuccessListener {
+                                    val intent = Intent(this, DashboardCustomerActivity::class.java)
+                                    startActivity(intent)
+                                    Log.d("Dokumen", "Menu berhasil document")
+                                }
                                 .addOnFailureListener { e -> Log.w("Dokumen", "Menu Error writing document", e) }
                         }
                     }
