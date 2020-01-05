@@ -3,12 +3,12 @@ package id.foodcourt.feature.customer.restaurants.menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.TextView
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
@@ -16,13 +16,18 @@ import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
-import id.foodcourt.data.Menu
-import id.foodcourt.data.Restaurant
-import id.foodcourt.feature.customer.restaurants.RestaurantListActivity
+import id.foodcourt.data.response.Menu
+import id.foodcourt.data.request.OrderMenu
+import id.foodcourt.feature.customer.payment.OrderCustomerActivity
 import kotlinx.android.synthetic.main.activity_menu_customer.*
-import kotlinx.android.synthetic.main.activity_restaurant_list.*
+import java.util.ArrayList
 
 class MenuCustomerActivity : AppCompatActivity() {
+
+    companion object {
+        var itemOrder : MutableList<OrderMenu> = mutableListOf()
+    }
+
     lateinit var db : FirebaseFirestore
     private var adapterMenu: MenuAdpater? = null
 
@@ -48,16 +53,20 @@ class MenuCustomerActivity : AppCompatActivity() {
         val resultTv = findViewById<TextView>(R.id.tv_menu)
 
         resultTv.text="Restaurant  = "+nama+"\n UID ="+uid
+
+        btn_detail.setOnClickListener {
+            val orderList = arrayListOf(itemOrder)
+            val intent = Intent(this@MenuCustomerActivity, OrderCustomerActivity::class.java)
+            intent.putParcelableArrayListExtra("ORDERLIST", ArrayList<Parcelable>(itemOrder))
+            startActivity(intent)
+
+
+        }
     }
     private inner class MenuAdpater internal constructor(options: FirestoreRecyclerOptions<Menu>) : FirestoreRecyclerAdapter<Menu, MenuViewHolder>(options) {
         override fun onBindViewHolder(menuViewHolder: MenuViewHolder, position: Int, menu: Menu) {
-            menuViewHolder.setMenuName(menu.name)
+            menuViewHolder.setMenu(menu)
             menuViewHolder.initListener()
-
-            var user = FirebaseAuth.getInstance().currentUser
-            btn_detail.setOnClickListener {
-                Toast.makeText(applicationContext, user!!.uid, Toast.LENGTH_SHORT).show()
-            }
         }
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
@@ -67,19 +76,31 @@ class MenuCustomerActivity : AppCompatActivity() {
     }
 
     private inner class MenuViewHolder internal constructor(private val view: View) : RecyclerView.ViewHolder(view) {
-        internal fun setMenuName(menuName: String) {
-            val textView = view.findViewById<TextView>(R.id.tv_menu)
-            textView.text = menuName
+
+        lateinit var mMenu : Menu
+
+        fun setMenu(menu : Menu){
+            mMenu = menu
+            val tvMenu = view.findViewById<TextView>(R.id.tv_menu)
+            val tvPrice= view.findViewById<TextView>(R.id.tv_price)
+
+            tvPrice.text = menu.price.toString()
+            tvMenu.text = menu.name
         }
+
 
         fun initListener(){
             val btn_plus : TextView = view.findViewById(R.id.tv_plus)
             val btn_less : TextView = view.findViewById(R.id.tv_less)
             val qty : TextView = view.findViewById(R.id.tv_qty)
+
+
             btn_plus.setOnClickListener {
                 var count = qty.text.toString().toInt()
                 count++
                 qty.text = count.toString()
+                updateCart(count)
+                Log.d("Menu total + ", "Total = ${itemOrder.size}")
             }
             btn_less.setOnClickListener {
                 var count = qty.text.toString().toInt()
@@ -87,8 +108,46 @@ class MenuCustomerActivity : AppCompatActivity() {
                     count--
                     qty.text = count.toString()
                 }
+                updateCart(count)
+                Log.d("Menu total - ", "Total = ${itemOrder.size}")
 
             }
+
+        }
+
+        fun updateCart(qty : Int){
+
+            if(qty > 0) {
+
+                var searchSameMenu = itemOrder.filter {
+                    it.menu == mMenu.name
+                }
+
+                if (searchSameMenu.size == 1) {
+                    itemOrder.find {
+                        it.menu == mMenu.name
+                    }?.qty = qty
+                } else {
+                    itemOrder.add(
+                        OrderMenu(
+                            mMenu.name,
+                            mMenu.price,
+                            qty
+                        )
+                    )
+                }
+            } else {
+                var searchSameMenu = itemOrder.filter {
+                    it.menu == mMenu.name
+                }
+
+                if (searchSameMenu.size == 1) {
+                    itemOrder.removeIf {
+                        it.menu == mMenu.name
+                    }
+                }
+            }
+
         }
     }
 

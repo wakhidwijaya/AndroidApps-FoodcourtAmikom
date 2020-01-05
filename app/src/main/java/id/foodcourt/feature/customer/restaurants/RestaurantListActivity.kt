@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
-import id.foodcourt.data.Restaurant
+import id.foodcourt.data.response.Restaurant
 import id.foodcourt.feature.customer.restaurants.menu.MenuCustomerActivity
 import kotlinx.android.synthetic.main.activity_restaurant_list.*
 
