@@ -51,9 +51,10 @@ class   QrCustomerActivity : AppCompatActivity(),  ZXingScannerView.ResultHandle
         if(rawResult.text.length == 10){
             val tableNum = rawResult.text.toString().takeLast(2)
             val editor = sharedPreferences.edit()
-            editor.putInt(TABLE, tableNum.toInt())
+            editor.putInt("TABLE", tableNum.toInt())
             editor.commit()
             val intent = Intent(this, RestaurantListActivity::class.java)
+            intent.putExtra("table", tableNum)
             startActivity(intent)
 
         }

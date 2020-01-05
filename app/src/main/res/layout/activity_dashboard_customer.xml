@@ -9,11 +9,47 @@
     tools:context=".feature.customer.dashboard.DashboardCustomerActivity">
 
     <Button
+        android:id="@+id/btn_ordercustomer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/shapebutton"
+        android:drawablePadding="20dp"
+        android:text="Your Order"
+        android:textColor="#e2f1f8"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:fontFamily="@font/quicksand_bold"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="72dp"/>
+
+    <Button
+        android:id="@+id/btn_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:background="@drawable/shapebutton"
+        android:drawablePadding="20dp"
+        android:text="Order History"
+        android:textColor="#e2f1f8"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:fontFamily="@font/quicksand_bold"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="72dp"/>
+
+    <Button
         android:id="@+id/btn_resto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="70dp"
         android:background="@drawable/shapebutton"
+        android:layout_margin="30dp"
         android:drawableLeft="@drawable/ic_settings_overscan_black_24dp"
         android:drawablePadding="20dp"
         android:text="@string/scan_table"

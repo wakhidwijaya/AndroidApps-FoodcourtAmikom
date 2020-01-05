@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.foodcourt.R
 import id.foodcourt.feature.customer.qrcode.QrCustomerActivity
+import id.foodcourt.feature.order.active.OrderActiveActivity
 import kotlinx.android.synthetic.main.activity_dashboard_customer.*
 
 class DashboardCustomerActivity : AppCompatActivity() {
@@ -15,6 +16,11 @@ class DashboardCustomerActivity : AppCompatActivity() {
 
         btn_resto.setOnClickListener {
             val intent = Intent(this, QrCustomerActivity::class.java )
+            startActivity(intent)
+        }
+
+        btn_ordercustomer.setOnClickListener {
+            val intent = Intent(this, OrderActiveActivity::class.java)
             startActivity(intent)
         }
     }

@@ -1,6 +1,8 @@
 package id.foodcourt.feature.customer.payment
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -12,13 +14,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Timestamp
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
 import id.foodcourt.data.request.OrderMenu
 import id.foodcourt.feature.customer.dashboard.DashboardCustomerActivity
 import id.foodcourt.utils.Config.TABLE
 import kotlinx.android.synthetic.main.activity_order_customer.*
+
 
 
 class OrderCustomerActivity : AppCompatActivity() {
@@ -40,7 +42,8 @@ class OrderCustomerActivity : AppCompatActivity() {
         val email = db!!.email
         val name = db!!.displayName
         val uid = db!!.uid
-        val table = getSharedPreferences(TABLE, 0)
+        val tablenum = intent.getStringExtra("table")
+
 
         var menus : MutableList<HashMap<String, Any?>> = mutableListOf()
 
@@ -60,7 +63,7 @@ class OrderCustomerActivity : AppCompatActivity() {
                 "email" to email,
                 "name" to name,
                 "status" to 0,
-                "table" to table.toString(),
+                "table" to tablenum.toInt(),
                 "uid" to uid
             )
 
