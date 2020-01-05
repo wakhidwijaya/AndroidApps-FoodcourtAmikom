@@ -2,18 +2,69 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#b0bec5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".feature.customer.payment.OrderCustomerActivity">
 
+    <TextView
+        android:id="@+id/tv_order"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_margin_onehundred_eighty"
+        android:background="@drawable/background_bottom_radius"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:text="@string/payment"
+        android:textColor="@color/colorIconsText"
+        android:textSize="@dimen/textsize_twenty"></TextView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_margin_teen"
+        android:layout_marginRight="@dimen/margin_margin_teen"
+        android:layout_marginBottom="@dimen/vertical_margin_six"
+        android:elevation="@dimen/margin_margin_teen"
+        android:layout_marginTop="15dp"
+        app:cardCornerRadius="@dimen/margin_margin_teen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="204dp"
+        android:layout_gravity="center_vertical">
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_order"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btn_checkout"
-        android:text="Pesan"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:layout_margin="30dp">
+
+        <Button
+            android:id="@+id/btn_checkout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shapebutton"
+            android:drawableLeft="@drawable/ic_restaurant_menu_black_24dp"
+            android:padding="15dp"
+            android:text="@string/pesan"
+            android:textColor="#e2f1f8" />
+
+    </RelativeLayout>
 </LinearLayout>

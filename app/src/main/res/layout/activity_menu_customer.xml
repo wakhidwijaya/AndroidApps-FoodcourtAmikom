@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="#b0bec5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -16,7 +17,8 @@
         android:fontFamily="@font/quicksand_bold"
         android:gravity="center"
         android:textColor="@color/colorIconsText"
-        android:textSize="30dp"></TextView>
+        android:textSize="50dp"
+        android:textStyle="bold"></TextView>
 
     <LinearLayout
         android:layout_width="match_parent"

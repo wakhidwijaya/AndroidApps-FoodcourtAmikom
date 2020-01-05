@@ -8,4 +8,6 @@
     <string name="scan_table">Scan Table</string>
     <string name="menu">menu</string>
     <string name="pesanan">PESANAN</string>
+    <string name="pesan">PESAN</string>
+    <string name="payment">Payment</string>
 </resources>
