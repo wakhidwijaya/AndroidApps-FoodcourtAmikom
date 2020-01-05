@@ -59,6 +59,8 @@ class MenuCustomerActivity : AppCompatActivity() {
             val orderList = arrayListOf(itemOrder)
             val intent = Intent(this@MenuCustomerActivity, OrderCustomerActivity::class.java)
             intent.putParcelableArrayListExtra("ORDERLIST", ArrayList<Parcelable>(itemOrder))
+            intent.putExtra("RestaurantName", nama)
+            intent.putExtra("RestaurantUid", uid)
             startActivity(intent)
 
 
