@@ -14,6 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
 import id.foodcourt.feature.customer.dashboard.DashboardCustomerActivity
+import id.foodcourt.feature.customer.restaurants.RestaurantListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -29,7 +30,8 @@ class MainActivity : AppCompatActivity() {
 
 
         btn_login.setOnClickListener {
-
+//            val intent = Intent(this, RestaurantListActivity::class.java)
+//            startActivity(intent)
             val email = et_email.text.toString()
             val password = et_password.text.toString()
 
