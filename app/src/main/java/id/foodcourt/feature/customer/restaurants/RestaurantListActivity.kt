@@ -30,6 +30,7 @@ class RestaurantListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_restaurant_list)
         rv_Restaurant.layoutManager = LinearLayoutManager(this)
         db = FirebaseFirestore.getInstance()
+
         val query = db!!.collection("restaurants")
         val options = FirestoreRecyclerOptions.Builder<Restaurant>().setQuery(query, Restaurant::class.java).build()
 
@@ -42,10 +43,12 @@ class RestaurantListActivity : AppCompatActivity() {
         override fun onBindViewHolder(productViewHolder: RestaurantViewHolder, position: Int, restaurant: Restaurant) {
             productViewHolder.setProductName(restaurant.name)
             productViewHolder.itemView.setOnClickListener {
+                val tablenum = intent.getStringExtra("table")
                 Toast.makeText(this@RestaurantListActivity, restaurant.name, Toast.LENGTH_SHORT)
                 val intent = Intent(this@RestaurantListActivity, MenuCustomerActivity::class.java)
                 intent.putExtra("RestaurantName", restaurant.name)
                 intent.putExtra("RestaurantUid", getSnapshots().getSnapshot(position).id)
+                intent.putExtra("table", tablenum)
                 startActivity(intent)
             }
         }

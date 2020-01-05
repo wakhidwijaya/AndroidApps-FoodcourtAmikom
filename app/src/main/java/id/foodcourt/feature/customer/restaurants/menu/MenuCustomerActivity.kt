@@ -36,6 +36,7 @@ class MenuCustomerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu_customer)
 
         val intent = intent
+        val table = intent.getStringExtra("table")
         val nama = intent.getStringExtra("RestaurantName")
         val uid = intent.getStringExtra("RestaurantUid")
 
@@ -62,6 +63,7 @@ class MenuCustomerActivity : AppCompatActivity() {
                 intent.putParcelableArrayListExtra("ORDERLIST", ArrayList<Parcelable>(itemOrder))
                 intent.putExtra("RestaurantName", nama)
                 intent.putExtra("RestaurantUid", uid)
+                intent.putExtra("table", table)
                 startActivity(intent)
             }
         }
