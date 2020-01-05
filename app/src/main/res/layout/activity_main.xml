@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_bottom_radius"
+    android:fontFamily="@font/quicksand_bold"
+    android:textColor="@color/colorIconsText"
     android:padding="30dp"
     android:orientation="vertical"
     tools:context=".feature.core.login.MainActivity">

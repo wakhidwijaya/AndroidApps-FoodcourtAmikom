@@ -1,20 +1,22 @@
 package id.foodcourt.feature.core.login
 
-import android.app.ProgressDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.nfc.Tag
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import id.foodcourt.R
 import id.foodcourt.feature.customer.dashboard.DashboardCustomerActivity
 import id.foodcourt.feature.customer.restaurants.RestaurantListActivity
 import kotlinx.android.synthetic.main.activity_main.*
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -53,12 +55,47 @@ class MainActivity : AppCompatActivity() {
 
         auth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, OnCompleteListener<AuthResult> { task ->
             if(task.isSuccessful){
-                val intent = Intent(this, DashboardCustomerActivity::class.java)
-                startActivity(intent)
-            } else{
+                val currentuser = FirebaseAuth.getInstance().currentUser!!.uid
+                checkRule(uid = currentuser )
+                } else{
                 showMessage(view,"Error: ${task.exception?.message}")
             }
         })
+     }
+
+    fun checkRule(uid: String){
+
+       val db = FirebaseFirestore.getInstance()
+
+        db.collection("customers")
+            .whereEqualTo("uid", uid)
+            .get()
+            .addOnSuccessListener { documents ->
+                when (documents.size()) {
+                    1 -> {
+                        val intent = Intent(this, DashboardCustomerActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+//                Log.w(Tag, "Error getting documents: ", exception)
+            }
+
+//        db.collection("restaurants")
+//            .whereEqualTo("uid", uid)
+//            .get()
+//            .addOnSuccessListener { documents ->
+//                when (documents.size()) {
+//                    1 -> {
+//                        val intent = Intent(this, DashboardCustomerActivity::class.java)
+//                        startActivity(intent)
+//                    }
+//                }
+//            }
+//            .addOnFailureListener { exception ->
+//                Log.w(TAG, "Error getting documents: ", exception)
+//            }
 
     }
 
