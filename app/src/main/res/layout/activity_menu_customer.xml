@@ -29,15 +29,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <Button
-        android:id="@+id/btn_detail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/shapebutton"
-        android:drawableLeft="@drawable/ic_restaurant_menu_black_24dp"
-        android:padding="15dp"
-        android:text="@string/pesanan"
-        android:textColor="#e2f1f8" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="bottom"
+        android:layout_margin="30dp"
+        >
+
+        <Button
+            android:id="@+id/btn_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shapebutton"
+            android:drawableLeft="@drawable/ic_restaurant_menu_black_24dp"
+            android:padding="15dp"
+            android:text="@string/pesanan"
+            android:textColor="#e2f1f8" />
+
+    </RelativeLayout>
 </LinearLayout>
