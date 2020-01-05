@@ -82,20 +82,19 @@ class MainActivity : AppCompatActivity() {
 //                Log.w(Tag, "Error getting documents: ", exception)
             }
 
-//        db.collection("restaurants")
-//            .whereEqualTo("uid", uid)
-//            .get()
-//            .addOnSuccessListener { documents ->
-//                when (documents.size()) {
-//                    1 -> {
-//                        val intent = Intent(this, DashboardCustomerActivity::class.java)
-//                        startActivity(intent)
-//                    }
-//                }
-//            }
-//            .addOnFailureListener { exception ->
-//                Log.w(TAG, "Error getting documents: ", exception)
-//            }
+        db.collection("restaurants")
+            .whereEqualTo("uid", uid)
+            .get()
+            .addOnSuccessListener { documents ->
+                when (documents.size()) {
+                    1 -> {
+                     Log.d("Sukses", "Login ke restoran")
+                    }
+                }
+            }
+            .addOnFailureListener { exception ->
+                Log.w("eror", "Error getting documents: ", exception)
+            }
 
     }
 
