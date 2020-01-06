@@ -44,10 +44,9 @@ class OrderCustomerActivity : AppCompatActivity() {
         val uid = db!!.uid
         val tablenum = intent.getStringExtra("table")
         var menus : MutableList<HashMap<String, Any?>> = mutableListOf()
-
+        var ttprice = mutableListOf<Int>()
 
         val pricetotal = findViewById<TextView>(R.id.tv_total_price)
-
 
         for (i in list){
             val order = hashMapOf(
@@ -57,10 +56,10 @@ class OrderCustomerActivity : AppCompatActivity() {
                 "qty" to i.qty,
                 "uid" to uidresto
             )
-            val price = i.price * i.qty
+            val totalprice =+ (i.qty*i.price)
             menus.add(order)
+            ttprice.add(i.qty * i.price)
         }
-
         btn_checkout.setOnClickListener {
             val customer = hashMapOf(
                 "email" to email,
