@@ -17,7 +17,7 @@
         android:gravity="center"
         android:text="@string/foodcourt_amikom"
         android:textColor="@color/colorIconsText"
-        android:textSize="@dimen/textsize_twenty"></TextView>
+        android:textSize="35dp"></TextView>
 
     <LinearLayout
         android:layout_width="match_parent"

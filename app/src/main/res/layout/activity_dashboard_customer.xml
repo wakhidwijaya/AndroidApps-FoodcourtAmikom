@@ -8,6 +8,18 @@
     android:orientation="vertical"
     tools:context=".feature.customer.dashboard.DashboardCustomerActivity">
 
+    <TextView
+        android:id="@+id/tv_activity_login"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/vertical_margin_onehundred_eighty"
+        android:background="@drawable/background_bottom_radius"
+        android:fontFamily="@font/quicksand_bold"
+        android:gravity="center"
+        android:text="@string/foodcourt_amikom"
+        android:textColor="@color/colorIconsText"
+        android:textSize="35dp"></TextView>
+
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -19,7 +31,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal|center_vertical"
-            android:layout_marginTop="167dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/shapebutton"
             android:fontFamily="@font/quicksand_bold"
             android:padding="20dp"

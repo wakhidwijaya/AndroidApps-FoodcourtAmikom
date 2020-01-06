@@ -20,7 +20,7 @@ import id.foodcourt.data.request.OrderMenu
 import id.foodcourt.feature.customer.dashboard.DashboardCustomerActivity
 import id.foodcourt.utils.Config.TABLE
 import kotlinx.android.synthetic.main.activity_order_customer.*
-
+import java.lang.Integer.sum
 
 
 class OrderCustomerActivity : AppCompatActivity() {
@@ -43,9 +43,11 @@ class OrderCustomerActivity : AppCompatActivity() {
         val name = db!!.displayName
         val uid = db!!.uid
         val tablenum = intent.getStringExtra("table")
-
-
         var menus : MutableList<HashMap<String, Any?>> = mutableListOf()
+
+
+        val pricetotal = findViewById<TextView>(R.id.tv_total_price)
+
 
         for (i in list){
             val order = hashMapOf(
@@ -55,6 +57,7 @@ class OrderCustomerActivity : AppCompatActivity() {
                 "qty" to i.qty,
                 "uid" to uidresto
             )
+            val price = i.price * i.qty
             menus.add(order)
         }
 
