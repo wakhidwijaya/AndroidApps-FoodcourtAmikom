@@ -26,20 +26,20 @@
         android:padding="30dp">
 
         <TextView
-            android:id="@+id/tv_activity_login_text"
+            android:id="@+id/tv_activity_register_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/quicksand_bold"
             android:gravity="center"
-            android:text="@string/login"
+            android:text="@string/register"
             android:textColor="@color/colorPrimaryText"
             android:textSize="@dimen/textsize_twenty"
             app:layout_constraintBottom_toTopOf="@id/et_email"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_email"
+            android:id="@+id/et_email_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
@@ -55,7 +55,7 @@
             android:paddingTop="@dimen/horizontal_margin_four" />
 
         <EditText
-            android:id="@+id/et_password"
+            android:id="@+id/et_password_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -69,18 +69,7 @@
             android:padding="10dp" />
 
         <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shapebutton"
-            android:drawableLeft="@drawable/ic_lock_open_black_24dp"
-            android:padding="15dp"
-            android:text="@string/text_btn_login"
-            android:textColor="#e2f1f8" />
-
-        <Button
-            android:id="@+id/btn_regist"
+            android:id="@+id/btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -89,6 +78,7 @@
             android:padding="15dp"
             android:text="@string/register_btn"
             android:textColor="#e2f1f8" />
+
 
     </LinearLayout>
 

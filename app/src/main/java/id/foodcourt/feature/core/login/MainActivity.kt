@@ -46,6 +46,13 @@ class MainActivity : AppCompatActivity() {
             signIn(it, et_email.text.toString(), et_password.text.toString())
 
         }
+
+        btn_regist.setOnClickListener {
+            // Handler code here.
+            val intent = Intent(this ,RegisterCustomers::class.java)
+            startActivity(intent);
+        }
+
     }
 
     fun signIn(view: View, email: String, password: String){

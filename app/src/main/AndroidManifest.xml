@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.order.active.OrderActiveActivity"></activity>
+        <activity android:name=".feature.core.login.RegisterCustomers"></activity>
+        <activity android:name=".feature.order.active.OrderActiveActivity" />
         <activity android:name=".feature.customer.payment.OrderCustomerActivity" />
         <activity android:name=".feature.customer.restaurants.menu.MenuCustomerActivity" />
         <activity android:name=".feature.customer.restaurants.RestaurantListActivity" />
