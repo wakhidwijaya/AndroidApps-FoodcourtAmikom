@@ -4,7 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import id.foodcourt.R
-import id.foodcourt.feature.customer.qrcode.QrCustomerActivity
+import id.foodcourt.feature.customer.table.TableNumberActivity
 import id.foodcourt.feature.order.active.OrderActiveActivity
 import kotlinx.android.synthetic.main.activity_dashboard_customer.*
 
@@ -15,7 +15,7 @@ class DashboardCustomerActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard_customer)
 
         btn_resto.setOnClickListener {
-            val intent = Intent(this, QrCustomerActivity::class.java )
+            val intent = Intent(this, TableNumberActivity::class.java )
             startActivity(intent)
         }
 

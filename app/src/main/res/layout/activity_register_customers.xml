@@ -39,10 +39,26 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
-            android:id="@+id/et_email_register"
+            android:id="@+id/et_name_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="18dp"
+            android:background="@drawable/shapeemail"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/quicksand_regular"
+            android:gravity="left"
+            android:hint="@string/hint_nama"
+            android:inputType="text"
+            android:padding="10dp"
+            android:paddingLeft="@dimen/vertical_margin_eight"
+            android:paddingTop="@dimen/horizontal_margin_four" />
+
+        <EditText
+            android:id="@+id/et_email_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:background="@drawable/shapeemail"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:drawablePadding="10dp"
