@@ -22,13 +22,6 @@
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="204dp">
 
-<!--    <androidx.constraintlayout.widget.ConstraintLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:padding="8dp"-->
-<!--        android:layout_margin="@dimen/margin_margin_teen"-->
-<!--        android:elevation="@dimen/horizontal_margin_sixteen">-->
-
         <RelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
@@ -36,6 +29,14 @@
             android:layout_alignParentLeft="true"
             android:padding="10dp">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"/>
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
