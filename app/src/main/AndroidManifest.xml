@@ -11,11 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.order.active.OrderActiveActivity"></activity>
+        <activity android:name=".feature.customer.table.number.InputNumberActivity"></activity>
+        <activity android:name=".feature.customer.table.TableNumberActivity" />
+        <activity android:name=".feature.core.login.RegisterCustomers" />
+        <activity android:name=".feature.order.active.OrderActiveActivity" />
         <activity android:name=".feature.customer.payment.OrderCustomerActivity" />
         <activity android:name=".feature.customer.restaurants.menu.MenuCustomerActivity" />
         <activity android:name=".feature.customer.restaurants.RestaurantListActivity" />
-        <activity android:name=".feature.customer.qrcode.QrCustomerActivity" />
+        <activity android:name=".feature.customer.table.qrcode.QrCustomerActivity" />
         <activity android:name=".feature.customer.dashboard.DashboardCustomerActivity" />
         <activity android:name=".feature.core.login.MainActivity">
             <intent-filter>

@@ -5,9 +5,16 @@
     <string name="text_btn_login">LOGIN</string>
     <string name="foodcourt_amikom">Foodcourt Amikom</string>
     <string name="login">LOGIN</string>
-    <string name="scan_table">Scan Table</string>
+    <string name="scan_table">Add Table</string>
     <string name="menu">menu</string>
     <string name="pesanan">PESANAN</string>
     <string name="pesan">PESAN</string>
     <string name="payment">Payment</string>
+    <string name="register">register</string>
+    <string name="register_btn">REGISTER</string>
+    <string name="hint_nama">Masukkan Nama</string>
+    <string name="add_number">Add Number</string>
+    <string name="scan_barcode">scan_barcode</string>
+    <string name="et_nomor">Masukkan nomor meja</string>
+    <string name="btn_number">Add Number</string>
 </resources>

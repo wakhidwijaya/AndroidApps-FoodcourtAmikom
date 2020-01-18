@@ -1,4 +1,4 @@
-package id.foodcourt.feature.customer.qrcode
+package id.foodcourt.feature.customer.table.qrcode
 
 import android.content.Intent
 import android.content.SharedPreferences
@@ -11,7 +11,6 @@ import id.foodcourt.R
 import id.foodcourt.feature.customer.restaurants.RestaurantListActivity
 import id.foodcourt.utils.Config.PREF_NAME
 import id.foodcourt.utils.Config.PRIVATE_MODE
-import id.foodcourt.utils.Config.TABLE
 import me.dm7.barcodescanner.zxing.ZXingScannerView
 
 
