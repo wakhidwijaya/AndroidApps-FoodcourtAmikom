@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/shapebutton"
-            android:drawableLeft="@drawable/ic_lock_open_black_24dp"
+            android:drawableLeft="@drawable/ic_note_add_black_24dp"
             android:padding="15dp"
             android:text="@string/register_btn"
             android:textColor="#e2f1f8" />
