@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     tools:context=".feature.customer.restaurants.RestaurantListActivity">
 
+<!--    <TextView-->
+<!--        android:id="@+id/tv_activity_restaurant"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="@dimen/vertical_margin_onehundred_eighty"-->
+<!--        android:background="@drawable/background_bottom_radius"-->
+<!--        android:fontFamily="@font/quicksand_bold"-->
+<!--        android:gravity="center"-->
+<!--        android:text="Daftar Restaurant"-->
+<!--        android:textColor="@color/colorIconsText"-->
+<!--        android:textSize="35dp"></TextView>-->
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_Restaurant"
         android:layout_width="match_parent"
