@@ -11,7 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".feature.customer.table.number.InputNumberActivity"></activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".feature.customer.table.number.InputNumberActivity" />
         <activity android:name=".feature.customer.table.TableNumberActivity" />
         <activity android:name=".feature.core.login.RegisterCustomers" />
         <activity android:name=".feature.order.active.OrderActiveActivity" />
