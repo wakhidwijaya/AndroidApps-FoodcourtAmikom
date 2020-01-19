@@ -57,6 +57,7 @@ class RegisterCustomers : AppCompatActivity() {
                         .addOnSuccessListener {
                             val intent = Intent(this, MainActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
                         .addOnFailureListener { e -> Log.w("Register", "Error writing document", e) }
                 }

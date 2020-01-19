@@ -80,6 +80,7 @@ class MainActivity : AppCompatActivity() {
                     1 -> {
                         val intent = Intent(this, DashboardCustomerActivity::class.java)
                         startActivity(intent)
+                        finish()
                     }
                 }
             }
