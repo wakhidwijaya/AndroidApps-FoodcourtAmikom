@@ -22,17 +22,28 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:gravity="center_vertical|center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="100dp"
+        android:paddingTop="150dp">
         <EditText
             android:id="@+id/et_number"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shapeemail"
+            android:fontFamily="@font/quicksand_regular"
+            android:gravity="left"
             android:hint="@string/et_nomor"
             android:inputType="number"/>
         <Button
             android:id="@+id/btn_addnumber"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/btn_number"/>
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shapebutton"
+            android:padding="15dp"
+            android:text="@string/btn_number"
+            android:textColor="#e2f1f8"/>
     </LinearLayout>
 </LinearLayout>
