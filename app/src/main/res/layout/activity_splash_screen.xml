@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:drawableLeft="@drawable/ic_restaurant_menu_black_24dp"
+            android:drawableTop="@drawable/ic_restaurant_menu_black_24dp"
             android:drawablePadding="20dp"
             android:text="@string/foodcourt_amikom"
             android:textColor="#fff"
